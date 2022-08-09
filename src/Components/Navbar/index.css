@@ -1,69 +1,104 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-    padding: 0 2rem;
-    background-color: #222;
-    color: #fff;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0 2rem;
+  color: #fff;
+  background: rgb(27, 18, 42);
+  background: radial-gradient(
+    circle,
+    rgba(62, 32, 106, 1) 4%,
+    rgba(27, 18, 42, 1) 100%
+  );
+  font-weight: 300;
+  transition: 1s;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav a {
-    margin: 0 2rem;
-    color: #fff;
-    text-decoration: none;
+  margin: 0 2rem;
+  color: #fff;
+  text-decoration: none;
 }
 
 nav a:hover {
-    color: aliceblue;
+  color: aliceblue;
 }
 
-header .nav-btn{
-    padding: 5px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#logo-navbar {
+  width: 90px;
+  transition: 1s;
+}
+
+.logo-response {
+  display: none;
+  width: 80px;
 }
 
 @media (max-width: 1024px) {
-    header .nav-btn{
-        visibility: visible;
-        opacity: 1;
-    }
-    header nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        background-color: #222;
-        transition: 1s;
-        transform: translateY(-100vh);
-        flex-direction: column;
-    }
-    header .responsive-nav {
-        transform: none;
-    }
-    nav .nav-close-btn {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-    }   
-    nav a {
-        font-size: 1.5rem;
-    }
+  #logo-navbar {
+    display: none;
+  }
+  .logo-response {
+    display: initial;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #222;
+    transition: 1s;
+    transform: translateY(-100vh);
+    flex-direction: column;
+  }
+  header .responsive-nav {
+    transform: none;
+  }
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  nav a {
+    font-size: 1.5rem;
+  }
 }
